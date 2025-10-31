@@ -106,5 +106,4 @@ $$uplift(x) = P(y=1 \mid T=1, x) - P(y=1 \mid T=0, x)$$
 
 **Мониторинг** (потенциально)
    - Периодический пересчёт метрик  
-   - Drift detection (PSI > 0.1 → warning)  
-   - Перетренировка модели при деградации
+   - Drift detection (PSI > 0.1 → warning)
