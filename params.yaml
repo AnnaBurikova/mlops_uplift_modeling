@@ -1,36 +1,36 @@
 data: 
-  test_size: 0.2 
+  test_size: 0.1 
   val_size: 0.2      # val_size * (1 - test_size) * N
   random_state: 42
 
 
 s_learner: 
-  iterations: 100
+  iterations: 200
   learning_rate: 0.01
-  depth: 4
+  depth: 6
   l2_leaf_reg: 3
   random_strength: 1
   bagging_temperature: 0.2
 
 t_learner: 
   treatment_learner: 
-    iterations: 100
+    iterations: 200
     learning_rate: 0.01
-    depth: 4
+    depth: 6
     l2_leaf_reg: 3
     random_strength: 1
     bagging_temperature: 0.2
   control_learner: 
-    iterations: 100
+    iterations: 200
     learning_rate: 0.01
-    depth: 4
+    depth: 6
     l2_leaf_reg: 3
     random_strength: 1
     bagging_temperature: 0.2
 
 tarnet: 
-  hidden_dim: 32
-  features_dim: 32
+  hidden_dim: 64
+  features_dim: 64
   learning_rate: 0.001
   epochs: 10
   batch_size: 128
