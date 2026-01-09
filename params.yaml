@@ -1,0 +1,4 @@
+data: 
+  test_size: 0.2 
+  val_size: 0.2      # val_size * (1 - test_size) * N
+  random_state: 42
