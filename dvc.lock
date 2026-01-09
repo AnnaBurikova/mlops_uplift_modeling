@@ -9,8 +9,8 @@ stages:
       size: 580744768
     - path: params.yaml
       hash: md5
-      md5: 23c74fdc2040bfa002287b058810b650
-      size: 98
+      md5: cd4fc0a4b204ba306d684bc68e6e9304
+      size: 767
     - path: src/prepare.py
       hash: md5
       md5: 1cd5778f463967ae412e704ad6c8b5d1
@@ -28,3 +28,79 @@ stages:
       hash: md5
       md5: b5f4c237dbc2f62df927318e6b2216d9
       size: 91713878
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: e4f4491df8e534d428a8cd3f93270699
+      size: 114640530
+    - path: data/processed/train.csv
+      hash: md5
+      md5: e12b900789d4dedf646f29a1be9da303
+      size: 366845394
+    - path: data/processed/val.csv
+      hash: md5
+      md5: b5f4c237dbc2f62df927318e6b2216d9
+      size: 91713878
+    - path: params.yaml
+      hash: md5
+      md5: cd4fc0a4b204ba306d684bc68e6e9304
+      size: 767
+    - path: src/train.py
+      hash: md5
+      md5: 346cdf6567543aae8a94899aad5c31af
+      size: 1825
+    outs:
+    - path: models/s_learner.pkl
+      hash: md5
+      md5: 8785cf71d74663f3d371b9beac2bf03c
+      size: 43958
+    - path: models/t_learner.pkl
+      hash: md5
+      md5: 6d3205351850743c713cb8bfc75781c7
+      size: 87549
+    - path: models/tarnet_learner.pth
+      hash: md5
+      md5: 79ac1f393778b2e35cf67e7d1dc2659b
+      size: 20341
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: e4f4491df8e534d428a8cd3f93270699
+      size: 114640530
+    - path: data/processed/train.csv
+      hash: md5
+      md5: e12b900789d4dedf646f29a1be9da303
+      size: 366845394
+    - path: data/processed/val.csv
+      hash: md5
+      md5: b5f4c237dbc2f62df927318e6b2216d9
+      size: 91713878
+    - path: params.yaml
+      hash: md5
+      md5: cd4fc0a4b204ba306d684bc68e6e9304
+      size: 767
+    - path: src/evaluate.py
+      hash: md5
+      md5: 433822c8f7eb5f68055180692eb77dc8
+      size: 4183
+    outs:
+    - path: reports/qini_curve_S-Learner.png
+      hash: md5
+      md5: f27059e3ea34ea858dd451b8539d0033
+      size: 32369
+    - path: reports/qini_curve_T-Learner.png
+      hash: md5
+      md5: 3bce6c0da882176e782a69de76845cfb
+      size: 32872
+    - path: reports/qini_curve_TarNet.png
+      hash: md5
+      md5: 6de9357de05b5c592322683e5ccfc2a7
+      size: 33755
+    - path: reports/results.json
+      hash: md5
+      md5: 48a3580230fc65ca3df0a2478aa24adf
+      size: 819

@@ -9,3 +9,30 @@ stages:
     - data/processed/test.csv
     - data/processed/train.csv
     - data/processed/val.csv
+
+  train:
+    cmd: 'python src/train.py'
+    deps:
+    - data/processed/test.csv
+    - data/processed/train.csv
+    - data/processed/val.csv
+    - params.yaml
+    - src/train.py
+    outs:
+    - models/s_learner.pkl
+    - models/t_learner.pkl
+    - models/tarnet_learner.pth
+
+  evaluate: 
+    cmd: 'python src/evaluate.py'
+    deps:
+      - data/processed/test.csv
+      - data/processed/train.csv
+      - data/processed/val.csv
+      - params.yaml
+      - src/evaluate.py
+    outs:
+      - reports/results.json
+      - reports/qini_curve_S-Learner.png
+      - reports/qini_curve_T-Learner.png
+      - reports/qini_curve_TarNet.png
