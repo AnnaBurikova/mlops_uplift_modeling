@@ -1,0 +1,11 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - data/raw/dataset.csv
+    - params.yaml
+    - src/prepare.py
+    outs:
+    - data/processed/test.csv
+    - data/processed/train.csv
+    - data/processed/val.csv
