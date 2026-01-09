@@ -1,4 +1,6 @@
 [core]
-    remote = localremote
+    remote = gdrive-remote
 ['remote "localremote"']
     url = ../../uplift_remote_local
+['remote "gdrive-remote"']
+    url = gdrive://1VIm6DtJW8FGwsUzBnvZHa_JEzyMQiBdw
